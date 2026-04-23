@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>The One 제품 페이지</title>
+    <style>
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;}
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;}
+
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;}
+
+        body,h1,h2,h3,p,ul,li {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;}
+
+        li {
+            list-style-type: none;}
+
+        a {
+            text-decoration: none;
+            color: black;}
+
+        body {
+            background-color: white;
+            font-family: 'Pretendard', sans-serif;}
+
+        html {
+            scroll-behavior: smooth;}
+
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 90%;
+            max-width: 1000px;
+
+            min-width: 800px;
+
+            padding: 12px 30px;
+            background-color: white;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;}
+
+        #s1 .contents {
+            height: 900px;}
+        #s2 {
+            background-image: url('package.png');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('package.png');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            background-attachment: fixed;}
+
+        .s3-flex {
+            display: flex;
+            align-items: center; 
+            justify-content: space-between; 
+            text-align: left; }
+
+        .s3-text .sub-title {
+            font-size: 24px;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            font-weight: 500;}
+
+        .s3-text .main-title {
+            font-size: 64px;
+            padding: 0; 
+            margin-bottom: 30px;}
+
+        .s3-text .main-title strong {
+            font-weight: 800;}
+
+        .s3-text .description {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;}
+
+        .s3-img img {
+            width: 500px; 
+            margin: 0; }
+
+
+        #s3 h2 {
+            text-align: left;
+            padding: 0;}
+
+
+        .logo a {
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;}
+
+        .menu {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;}
+
+        .menu li a {
+            display: block;
+            padding: 8px 20px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: all 0.3s ease;}
+
+        .menu li a:hover {
+            background-color: #f0f0f0;}
+
+        .menu li:last-child a {
+            background-color: #3b82f6;
+            color: white;
+            border: none;}
+
+        .menu li:last-child a:hover {
+            background-color: #2563eb;}
+
+        h1 {
+            font-family: 'Pretendard';
+            font-weight: 700;
+            font-size: 72px;
+            padding: 100px 0 20px 0;
+            text-align: center;}
+
+        h2 {
+            font-family: 'Pretendard';
+            font-weight: 500;
+            font-size: 32px;
+            padding: 100px 0;}
+
+        h3 {
+            font-family: 'Pretendard';
+            font-weight: 300;
+            font-size: 18px;
+            padding: 0 0 40px 0;
+            text-align: center;}
+
+        img {
+            display: block;
+            margin: 0 auto;}
+
+        .img-size-main {
+            width: 90%}
+
+        .img-size-sub {
+            width: 60%}
+
+
+        .absolute {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 9999;}
+
+        .contents {
+            width: 800px;
+            margin: auto;
+            position: relative;
+            padding: 100px 0px;
+            perspective: 1000px}
+
+        .yellow {
+            background: #fff9c4;}
+
+        .bg-gradient {
+            background: linear-gradient(0deg, rgba(248, 248, 249, 1) 0%, rgba(255, 255, 255, 1) 100%);}
+
+        .bg-gray {
+            background: #f8f8f9;}
+
+        .text-pos-1 {
+            position: absolute;
+            left: 50px;
+            top: 150px;
+            text-align: left;}
+
+        .text-pos-2 {
+            position: absolute;
+            right: 50px;
+            top: 600px;
+            text-align: right;}
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="#">The One</a>
+        </div>
+        <ul class="menu">
+            <li><a href="#s2">제품소개</a></li>
+            <li><a href="#s4">살펴보기</a></li>
+            <li><a href="#s7">후기보기</a></li>
+            <li><a href="#footer">구매하기</a></li>
+        </ul>
+    </nav>
+
+    <header>
+    <div class="contents" style="text-align: center; padding-top: 150px;">
+        <h1 style="font-size: 80px; margin-bottom: 10px; padding: 0;">
+            The <strong>One</strong>
+        </h1>
+        <h3 style="font-size: 24px; color: #333; font-weight: 500; margin-bottom: 40px; padding: 0;">
+            하나의 형태, 무한한 쓰임.
+        </h3>
+        
+        <div style="margin-bottom: 60px;">
+            <a href="#footer" style="
+                display: inline-block;
+                background-color: #3b82f6;
+                color: white;
+                padding: 15px 40px;
+                border-radius: 30px;
+                font-size: 18px;
+                font-weight: 500;
+                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+                transition: transform 0.2s ease;
+                cursor: pointer;
+            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                구입하기
+            </a>
+        </div>
+
+        <img src="theone.png" class="img-size-main">
+    </div>
+</header>
+
+    <section id="s1" class="bg-gray">
+        <div class="contents">
+            <div class="text-pos-1">
+                <h2>코딩?<br>시스템 업데이트? <br> 다 무슨 소리인지 모르겠어!</h2>
+            </div>
+            <img src="intro-1.png" class="absolute" style="width: 450px;right:-450px;top:50px;">
+            <div class="text-pos-2">
+                <h2>사실 당신,<br> <br>너무 많고<br>너무 복잡한 세상에<br>진절머리 나버린건 아닌가요?</h2>
+            </div>
+            <img src="intro-2.png" class="absolute" style="width: 450px;left:-100px;top:400px;">
+        </div>
+    </section>
+
+    <section id="s2">
+        <div class="contents">
+            <h2>당신에게 'The One'을 소개합니다.</h2>
+        </div>
+    </section>
+
+    <section id="s3" class="bg-gray">
+    <div class="contents s3-flex">
+        <div class="s3-text">
+            <p class="sub-title">그래서,<br>다시,<br>근본으로</p>
+            <h2 class="main-title">The <strong>One</strong></h2>
+            <p class="description">
+                인류 역사상 가장 오래되었지만,<br>
+                가장 혁신적인 <strong>올인원 디바이스.</strong><br>
+                당신은 과거와 미래를<br>모두 손 안에 쥐게 됩니다.
+            </p>
+        </div>
+        <div class="s3-img">
+            <img src="stone-hand.png" alt="The One"> </div>
+    </div>
+    </section>
+
+    <section id="s4">
+        <div class="contents s3-flex">
+            <div class="s3-text">
+                <p class="sub-title">기능 1.</p>
+                <h2 class="main-title" style="font-size: 40px;">효과적인 책 고정,<br><strong>펼쳐진 그 페이지 그대로</strong></h2>
+                <p class="description">
+                    카페 야외 테이블, 갑작스러운 바람.<br>
+                    당신의 페이지는 더 이상 흔들리지 않습니다.<br><br>
+                    The One의 압도적인 질량은 양장본부터 신문까지,
+                    어떤 종이도 정확히 그 자리에 머무르게 만듭니다.
+                </p>
+            </div>
+            <div class="s3-img">
+                <img src="fun-1.png" alt="기능 1" style="width: 450px;">
+            </div>
+        </div>
+    </section>
+
+    <section id="s5" class="bg-gray">
+        <div class="contents s3-flex">
+            <div class="s3-img">
+                <img src="fun-2.png" alt="기능 2" style="width: 450px;">
+            </div>
+            <div class="s3-text" style="text-align: right;">
+                <p class="sub-title">기능 2.</p>
+                <h2 class="main-title" style="font-size: 40px;">3대 몇 치세요?<br><strong>저는 The One이요.</strong></h2>
+                <p class="description">
+                    어떤 덤벨도 흉내 낼 수 없는 비대칭의 그립감.<br>
+                    매 세트마다 미세하게 다른 각도로 손에 잡힙니다.<br><br>
+                    정형화된 무게는 정형화된 근육을 만들 뿐입니다.<br>
+                    진짜 코어는, <br>예측할 수 없는 무게에서 만들어집니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="s6">
+        <div class="contents">
+            <div class="s3-flex" style="margin-bottom: 100px;">
+                <div class="s3-text">
+                    <p class="sub-title">기능 3.</p>
+                    <h2 class="main-title" style="font-size: 40px;">모터도, 칼날도 없다.<br><strong>가장 원초적인 분쇄 경험</strong></h2>
+                    <p class="description">
+                        후추 한 알, 마늘 한 쪽, 견과류 한 줌.<br>
+                        손목의 무게만으로 그 어떤 푸드 프로세서보다<br>
+                        정직한 입자를 만들어냅니다. 분해 청소도 필요 없죠.
+                    </p>
+                </div>
+                <div class="s3-img">
+                    <img src="fun-3.png" alt="기능 3" style="width: 400px;">
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 80px 0;">
+
+            <div class="s3-flex">
+                <div class="s3-img">
+                    <img src="fun-4.png" alt="기능 4" style="width: 400px;">
+                </div>
+                <div class="s3-text" style="text-align: right;">
+                    <p class="sub-title">기능 4.</p>
+                    <h2 class="main-title" style="font-size: 40px;">비워도<br><strong>비워지지 않는 자리.</strong></h2>
+                    <p class="description">
+                        카페에서 화장실에 가는 그 짧은 순간,<br>
+                        당신의 자리에 누구도 앉을 수 없게 됩니다.<br><br>
+                        노트북보다 안전하고, 가방보다 위협적입니다.<br>
+                        The One은 <strong>침묵으로 영역을 선언</strong>합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s7" class="bg-gray">
+        <div class="contents s3-flex">
+            <div class="s3-text">
+                <p class="sub-title">기능 5.</p>
+                <h2 class="main-title" style="font-size: 40px;">카페인보다 빠르다.<br><strong>각성, 한 손 안에</strong></h2>
+                <p class="description">
+                    카페인보다 빠르고, 알람보다 정직한 각성.<br>
+                    거친 천연 마감의 모서리가 당신의 허벅지에 닿는 순간,<br>
+                    당신의 감각은 1초 만에 회의실 한가운데로 돌아옵니다.<br><br>
+                    졸음은 The One 앞에서 가장 빠르게 패배합니다.
+                </p>
+            </div>
+            <div class="s3-img">
+                <img src="fun-5.png" alt="기능 5" style="width: 500px; margin-right: -100px;">
+            </div>
+        </div>
+    </section>
+
+    <section id="s8">
+        <div class="contents s3-flex">
+            <div class="s3-img">
+                <img src="fun-6.png" alt="기능 6" style="width: 450px;">
+            </div>
+            <div class="s3-text" style="text-align: right;">
+                <p class="sub-title">기능 6.</p>
+                <h2 class="main-title" style="font-size: 40px;">태초의 맛,<br><strong>하나면 깊은 맛? 끝.</strong></h2>
+                <p class="description">
+                    유럽 민담 속 나그네는 돌 하나로 마을 전체를 먹였습니다.
+                    끓는 물 위에 The One을 넣어보세요.<br><br>
+                    4억 년간 숙성된 60여 종의 미네랄이 당신의 냄비를
+                    태초의 맛으로 채웁니다. <br>다시다도, 치킨스톡도 필요 없습니다.<br>
+                    그저 The One이면, 끝.
+                </p>
+            </div>
+        </div>
+    </section>
+<footer id="footer" style="background-color: #fcfcfc; border-top: 1px solid #eee; width: 100%;">
+        <div class="contents" style="padding: 100px 0 60px 0; max-width: 800px; margin: 0 auto;">
+            
+            <div style="margin-bottom: 80px; text-align: left;">
+                <h2 style="font-size: 60px; font-weight: 700; margin: 0; padding: 0; letter-spacing: -1px; font-family: 'Pretendard', sans-serif;">
+                    The <strong>One</strong>
+                </h2>
+                <p style="font-size: 32px; font-weight: 500; color: #333; margin-top: 15px; line-height: 1.3; font-family: 'Pretendard', sans-serif;">
+                    단 하나로,<br>모든 것을.
+                </p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #eee; padding-top: 40px;">
+                
+                <div style="color: #888; font-size: 13px; font-family: 'Pretendard', sans-serif;">
+                    Copyright © 2026 The One. 모든 권리 보유.
+                </div>
+
+                <ul style="display: flex; gap: 20px; font-size: 13px; list-style: none; margin: 0; padding: 0;">
+                    <li><a href="#" style="text-decoration: none; color: #666; transition: color 0.2s;" onmouseover="this.style.color='#000'" onmouseout="this.style.color='#666'">개인정보 처리방침</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #666; transition: color 0.2s;" onmouseover="this.style.color='#000'" onmouseout="this.style.color='#666'">웹 사이트 이용 약관</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #666; transition: color 0.2s;" onmouseover="this.style.color='#000'" onmouseout="this.style.color='#666'">판매 및 환불</a></li>
+                    <li><a href="#" style="text-decoration: none; color: #666; transition: color 0.2s;" onmouseover="this.style.color='#000'" onmouseout="this.style.color='#666'">고객 센터</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
